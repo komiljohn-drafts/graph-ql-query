@@ -99,7 +99,10 @@ const Continents = () => {
                 </p>
                 <p>
                   <b>Languages: </b>
-                  {item.code}
+                  {item.languages.reduce(
+                    (acc, cur) => acc + " " + cur.name,
+                    ""
+                  )}
                 </p>
                 <p>
                   <b>County phone starts with: </b>
@@ -117,6 +120,11 @@ const Continents = () => {
               </div>
             ))}
       </div>
+      {continentCode && (
+        <div onClick={() => setContinentCode("")} className={cls.goBackBtn}>
+          {`<`} Go back to continents
+        </div>
+      )}
       <div>
         <p>
           <b>GraphQL fake server url: </b>
@@ -153,11 +161,6 @@ const Continents = () => {
           </pre>
         </p>
       </div>
-      {continentCode && (
-        <div onClick={() => setContinentCode("")} className={cls.goBackBtn}>
-          {`<`} Go back to continents
-        </div>
-      )}
     </div>
   );
 };

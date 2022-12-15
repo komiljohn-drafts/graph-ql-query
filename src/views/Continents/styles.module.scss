@@ -4,6 +4,8 @@
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+  height: 60vh;
+  overflow-y: scroll;
   .continent {
     background-color: aliceblue;
     border-radius: 3px;
@@ -23,10 +25,11 @@
     }
   }
   .country {
+    padding: 0 5px;
     background-color: darkgrey;
     border-radius: 3px;
     color: #000;
-    width: 20%;
+    flex-grow: 1;
   }
 }
 .goBackBtn {
@@ -37,5 +40,6 @@
   padding: 10px;
   font-weight: 600;
   margin-inline: auto;
+  margin-top: 20px;
   cursor: pointer;
 }
